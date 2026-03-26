@@ -1,7 +1,7 @@
 # Restaurant Review ABSA System
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](YOUR_STREAMLIT_APP_URL)
-[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Model-yellow)](YOUR_HUGGINGFACE_MODEL_URL)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://absa-restaurant-reviews.streamlit.app)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Models-blue)](https://huggingface.co/zhizhi188)
 
 ISOM5240 Deep Learning Course Project - Aspect-Based Sentiment Analysis for Restaurant Reviews
 
@@ -14,11 +14,11 @@ This project implements an Aspect-Based Sentiment Analysis (ABSA) system for res
 
 ## 🚀 Live Demo
 
-**Streamlit Cloud App**: [YOUR_APP_URL](YOUR_APP_URL)
+**Streamlit Cloud App**: [https://absa-restaurant-reviews.streamlit.app](https://absa-restaurant-reviews.streamlit.app)
 
 **Hugging Face Models**:
-- Aspect Detection: [YOUR_HF_USERNAME/absa-aspect-detection](YOUR_HF_URL)
-- Sentiment Analysis: [YOUR_HF_USERNAME/absa-sentiment-analysis](YOUR_HF_URL)
+- Aspect Detection: [zhizhi188/results_pipeline1](https://huggingface.co/zhizhi188/results_pipeline1)
+- Sentiment Analysis: [zhizhi188/results_pipeline2](https://huggingface.co/zhizhi188/results_pipeline2)
 
 ## 📊 Dataset
 
@@ -47,7 +47,7 @@ This project implements an Aspect-Based Sentiment Analysis (ABSA) system for res
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/absa-restaurant-reviews.git
+git clone https://github.com/ZZY-0813/absa-restaurant-app.git
 cd absa-restaurant-reviews
 
 # Create virtual environment
@@ -63,23 +63,11 @@ streamlit run app.py
 
 ### Model Files
 
-Place the fine-tuned model files in the following structure:
-```
-.
-├── app.py
-├── requirements.txt
-├── README.md
-├── aspect_detection_model/
-│   ├── config.json
-│   ├── model.safetensors
-│   ├── tokenizer.json
-│   └── tokenizer_config.json
-└── sentiment_analysis_model/
-    ├── config.json
-    ├── model.safetensors
-    ├── tokenizer.json
-    └── tokenizer_config.json
-```
+Models are automatically loaded from Hugging Face Hub:
+- Pipeline 1: `zhizhi188/results_pipeline1`
+- Pipeline 2: `zhizhi188/results_pipeline2`
+
+No manual download required!
 
 ## 📖 Usage
 

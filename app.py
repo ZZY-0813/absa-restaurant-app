@@ -26,20 +26,19 @@ SENTIMENT_COLORS = {
     'conflict': '#FFD700'
 }
 
+# ============== Model Configuration ==============
+# Hugging Face Model URLs
+ASPECT_MODEL_NAME = "zhizhi188/results_pipeline1"
+SENTIMENT_MODEL_NAME = "zhizhi188/results_pipeline2"
+
 # ============== Model Loading ==============
 @st.cache_resource
 def load_aspect_detection_model():
-    """Load the aspect detection model (Pipeline 1)"""
+    """Load the aspect detection model (Pipeline 1) from Hugging Face Hub"""
     try:
-        # Try to load from Hugging Face Hub first
-        # model_name = "your-username/absa-aspect-detection"
-        # tokenizer = AutoTokenizer.from_pretrained(model_name)
-        # model = AutoModelForSequenceClassification.from_pretrained(model_name)
-        
-        # For local development, use local path
-        model_path = "aspect_detection_model"
-        tokenizer = AutoTokenizer.from_pretrained(model_path)
-        model = AutoModelForSequenceClassification.from_pretrained(model_path)
+        # Load from Hugging Face Hub
+        tokenizer = AutoTokenizer.from_pretrained(ASPECT_MODEL_NAME)
+        model = AutoModelForSequenceClassification.from_pretrained(ASPECT_MODEL_NAME)
         
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         model.to(device)
@@ -48,21 +47,16 @@ def load_aspect_detection_model():
         return tokenizer, model, device
     except Exception as e:
         st.error(f"Error loading aspect detection model: {e}")
+        st.info("Please check if the model 'zhizhi188/results_pipeline1' is accessible on Hugging Face Hub.")
         return None, None, None
 
 @st.cache_resource
 def load_sentiment_analysis_model():
-    """Load the sentiment analysis model (Pipeline 2)"""
+    """Load the sentiment analysis model (Pipeline 2) from Hugging Face Hub"""
     try:
-        # Try to load from Hugging Face Hub first
-        # model_name = "your-username/absa-sentiment-analysis"
-        # tokenizer = AutoTokenizer.from_pretrained(model_name)
-        # model = AutoModelForSequenceClassification.from_pretrained(model_name)
-        
-        # For local development, use local path
-        model_path = "sentiment_analysis_model"
-        tokenizer = AutoTokenizer.from_pretrained(model_path)
-        model = AutoModelForSequenceClassification.from_pretrained(model_path)
+        # Load from Hugging Face Hub
+        tokenizer = AutoTokenizer.from_pretrained(SENTIMENT_MODEL_NAME)
+        model = AutoModelForSequenceClassification.from_pretrained(SENTIMENT_MODEL_NAME)
         
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         model.to(device)
@@ -71,6 +65,7 @@ def load_sentiment_analysis_model():
         return tokenizer, model, device
     except Exception as e:
         st.error(f"Error loading sentiment analysis model: {e}")
+        st.info("Please check if the model 'zhizhi188/results_pipeline2' is accessible on Hugging Face Hub.")
         return None, None, None
 
 # ============== Prediction Functions ==============
