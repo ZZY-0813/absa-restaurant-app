@@ -262,9 +262,9 @@ def main():
         """)
         
         st.markdown("---")
-        st.markdown("**Developed by:** [Your Name]")
-        st.markdown("**GitHub:** [Repository URL]")
-        st.markdown("**HuggingFace:** [Model URLs]")
+        st.markdown("**Developed by:** 梁智童 (Zhitong Liang)")
+        st.markdown("**GitHub:** [https://github.com/ZZY-0813/absa-restaurant-app.git]")
+        st.markdown("**HuggingFace:** [zhizhi188/results_pipeline1 zhizhi188/results_pipeline2]")
     
     # Load models
     with st.spinner("Loading models..."):
